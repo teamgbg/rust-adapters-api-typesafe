@@ -1,0 +1,51 @@
+# @status generated
+# @generator cargo-workspace-pins@1.0.0
+# Dependency versions here are PROJECTED from published registry state, and the
+# members table is DERIVED from where the member manifests sit.
+# Do not hand-edit: the next codegen run reverts it, and guard_rule/
+# cargo-teamscala-declaration-is-derived refuses the write at the tool boundary.
+# rust-adapters-api-typesafe — api-typesafe in its own repository
+# (one-publishable-artifact-one-repository, operator ruling 2026-09-13).
+# Crate moved BYTE-FOR-BYTE from scala-apis crates/api-typesafe
+# (migrations-copy-not-rewrite); this workspace manifest is the new
+# composition. No first-party deps.
+[workspace]
+resolver = "2"
+members = [
+  "crates/adapters/api-typesafe",
+]
+
+[workspace.package]
+edition = "2021"
+publish = ["teamscala"]
+
+[workspace.dependencies]
+serde_json = "1"
+
+# @status generated
+# @generator cargo-workspace-profiles@1.0.0
+# Cargo [profile.*] sections are PROJECTED from config/cargo-profiles.
+# Do not hand-edit: the next codegen run reverts it, and
+# guard_rule/cargo-profile-block-is-generated refuses the write at the
+# tool boundary.
+# >>> BEGIN GENERATED CARGO PROFILES — cargo-workspace-profiles@1.0.0
+[profile.release]
+opt-level = 3
+lto = false
+codegen-units = 16
+incremental = true
+panic = "unwind"
+strip = "symbols"
+debug = false
+
+[profile.dev]
+incremental = true
+debug = "line-tables-only"
+
+[profile.test]
+incremental = true
+debug = "line-tables-only"
+# <<< END GENERATED CARGO PROFILES
+
+[workspace.lints.clippy]
+disallowed_methods = "deny"
