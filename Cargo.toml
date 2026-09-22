@@ -22,6 +22,10 @@ publish = ["teamscala"]
 [workspace.dependencies]
 serde_json = "1"
 
+
+[workspace.lints.clippy]
+disallowed_methods = "deny"
+
 # @status generated
 # @generator cargo-workspace-profiles@1.0.0
 # Cargo [profile.*] sections are PROJECTED from config/cargo-profiles.
@@ -46,6 +50,3 @@ debug = "line-tables-only"
 incremental = true
 debug = "line-tables-only"
 # <<< END GENERATED CARGO PROFILES
-
-[workspace.lints.clippy]
-disallowed_methods = "deny"
